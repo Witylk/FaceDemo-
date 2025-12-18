@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ==================== 配置区域 ====================
 DATASET_DIR = "face_dataset"
-MODEL_FILE = "face_model.pkl"
+MODEL_FILE = "face_model1.pkl"
 RESULT_ROOT_DIR = "rec1ognition_results"
 ADMIN_PASSWORD = "SZTU"
 THRESHOLD = 0.45
