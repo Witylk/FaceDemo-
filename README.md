@@ -132,10 +132,9 @@ uv run main.py
 
 ![图片识别结果](rec1ognition_results/output1/checked_images.jpeg)
 
-**视频识别** — 川普每周演说识别结果：
+**视频识别** — 川普每周演说识别结果（可直接播放）：
 
-[![川普识别结果](rec1ognition_results/output1/checked_images.jpeg)](rec1ognition_results/trump_weekly_identified.mp4)
-*点击图片下载或查看识别后的视频（H.264 MP4）*
+<video src="rec1ognition_results/trump_weekly_identified.mp4" controls width="100%"></video>
 
 > 💡 **提示**：识别过程中按 **q** 键可退出视频/摄像头预览窗口。
 > ⭐ 如果本项目对你有帮助，请在 GitHub 右上角点 **Star** 收藏支持！
