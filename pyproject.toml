@@ -1,0 +1,16 @@
+[project]
+name = "face-demo"
+version = "2.0.0"
+description = "人脸识别系统 V2.0"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26.0",
+    "opencv-python>=4.10.0",
+    "Pillow>=10.0.0",
+    "dlib",
+    "face_recognition_models @ git+https://github.com/ageitgey/face_recognition_models",
+    "face_recognition",
+    "setuptools<72",
+]
+[tool.uv]
+managed = true

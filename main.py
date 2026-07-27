@@ -4,7 +4,9 @@ import face_recognition
 import os
 import pickle
 import numpy as np
+import subprocess
 from PIL import Image, ImageDraw, ImageFont
+from imageio_ffmpeg import get_ffmpeg_exe
 
 # ==================== 配置区域 ====================
 DATASET_DIR = "face_dataset"
@@ -338,9 +340,26 @@ def process_video_file():
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    out = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
 
-    print(f"[-] 开始处理视频: {save_path}")
+    # 使用靜態 ffmpeg 直接輸出 H.264 MP4（VS Code 可直接播放）
+    ffmpeg_path = get_ffmpeg_exe()
+    ffmpeg_cmd = [
+        ffmpeg_path, "-y",
+        "-f", "rawvideo",
+        "-vcodec", "rawvideo",
+        "-s", f"{width}x{height}",
+        "-pix_fmt", "bgr24",
+        "-r", str(fps),
+        "-i", "-",
+        "-c:v", "libx264",
+        "-pix_fmt", "yuv420p",
+        "-preset", "fast",
+        "-crf", "23",
+        save_path
+    ]
+    proc = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
+
+    print(f"[-] 开始处理视频 -> {save_path}")
     cnt = 0
     while True:
         ret, frame = cap.read()
@@ -363,19 +382,19 @@ def process_video_file():
             names.append(name)
 
         for (t, r, b, l), name in zip(locs, names):
-            t *= 2;
-            r *= 2;
-            b *= 2;
-            l *= 2
+            t *= 2; r *= 2; b *= 2; l *= 2
             color = (0, 255, 0) if name != "Unknown" else (0, 0, 255)
             cv2.rectangle(frame, (l, t), (r, b), color, 2)
             if name == "Unknown":
                 cv2.putText(frame, name, (l, t - 10), cv2.FONT_HERSHEY_DUPLEX, 0.8, color, 1)
             else:
                 frame = cv2AddChineseText(frame, name, (l, t - 30), color, 30)
-        out.write(frame)
+
+        proc.stdin.write(frame.tobytes())
+
+    proc.stdin.close()
+    proc.wait()
     cap.release()
-    out.release()
     print("\n[√] 处理完成")
 
 
