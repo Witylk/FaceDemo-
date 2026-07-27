@@ -134,7 +134,10 @@ uv run main.py
 
 **视频识别** — 川普每周演说识别结果（可直接播放）：
 
+
 https://raw.githubusercontent.com/Witylk/FaceDemo-/main/rec1ognition_results/trump_weekly_identified.mp4
+
+
 
 > 💡 **提示**：识别过程中按 **q** 键可退出视频/摄像头预览窗口。
 > ⭐ 如果本项目对你有帮助，请在 GitHub 右上角点 **Star** 收藏支持！
