@@ -1,3 +1,15 @@
+
+
+https://github.com/user-attachments/assets/16ead819-f56d-454b-8745-2ef68fb6eb37
+
+
+
+https://github.com/user-attachments/assets/5221f8da-711d-4f35-8e7a-ee3e8da2082f
+
+
+
+https://github.com/user-attachments/assets/e67719ba-ba4b-493d-88a0-34ce8f569235
+
 # 人脸识别系统 (Face Recognition System) V2.0
 
 > 🎓 本项目可作为 **Python 课程人脸识别期末作业** 参考，涵盖图像处理、机器学习模型训练、视频流分析等完整流程。
