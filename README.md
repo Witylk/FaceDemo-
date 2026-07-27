@@ -1,15 +1,3 @@
-
-
-https://github.com/user-attachments/assets/16ead819-f56d-454b-8745-2ef68fb6eb37
-
-
-
-https://github.com/user-attachments/assets/5221f8da-711d-4f35-8e7a-ee3e8da2082f
-
-
-
-https://github.com/user-attachments/assets/e67719ba-ba4b-493d-88a0-34ce8f569235
-
 # 人脸识别系统 (Face Recognition System) V2.0
 
 > 🎓 本项目可作为 **Python 课程人脸识别期末作业** 参考，涵盖图像处理、机器学习模型训练、视频流分析等完整流程。
@@ -146,10 +134,7 @@ uv run main.py
 
 **视频识别** — 川普每周演说识别结果（可直接播放）：
 
-
-https://raw.githubusercontent.com/Witylk/FaceDemo-/main/rec1ognition_results/trump_weekly_identified.mp4
-
-
+(https://github.com/user-attachments/assets/16ead819-f56d-454b-8745-2ef68fb6eb37)
 
 > 💡 **提示**：识别过程中按 **q** 键可退出视频/摄像头预览窗口。
 > ⭐ 如果本项目对你有帮助，请在 GitHub 右上角点 **Star** 收藏支持！
